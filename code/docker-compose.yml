@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "2024:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: devopsexpt11
+      MYSQL_USER: adityanageshraorane
+      MYSQL_PASSWORD: aditya44
+    ports:
+      - "3307:3306"
